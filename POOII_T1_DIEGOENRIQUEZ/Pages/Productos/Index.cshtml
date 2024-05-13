@@ -1,0 +1,58 @@
+﻿@page
+@model POOII_T1_DIEGOENRIQUEZ.Pages.Productos.IndexModel
+@{
+    ViewData["Title"] = "Lista de Personal";
+}
+<div class="card">
+    <div class="card-header bg-dark">
+        <div class="row">
+            <div class="col-sm-9">
+                <h2 class="text-info">Lista de personal</h2>
+            </div>
+            <div class="col-sm-3">
+                <a asp-page="Crear" class="btn btn-primary">Crear Nuevo Personal</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <form method="post">
+            @if (Model.Personal.Count() > 0)
+            {
+                <br />
+                <table class="table table-striped border">
+                    <tr class="table-secondary">
+                        <th>@Html.DisplayNameFor(m => m.Personal.First().Id)</th>
+                        <th>@Html.DisplayNameFor(m => m.Personal.First().Nombre)</th>
+                        <th>@Html.DisplayNameFor(m => m.Personal.First().Apellido)</th>
+                        <th>@Html.DisplayNameFor(m => m.Personal.First().FechaIngreso)</th>
+                        <th>@Html.DisplayNameFor(m => m.Personal.First().Area)</th>
+                        <th>@Html.DisplayNameFor(m => m.Personal.First().Sueldo)</th>
+                        <th>@Html.DisplayNameFor(m => m.Personal.First().Seniority)</th>
+                        <th>Acciones</th>
+                    </tr>
+                    @foreach (var item in Model.Personal)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(m => item.Id)</td>
+                            <td>@Html.DisplayFor(m => item.Nombre)</td>
+                            <td>@Html.DisplayFor(m => item.Apellido)</td>
+                            <td>@Html.DisplayFor(m => item.FechaIngreso)</td>
+                            <td>@Html.DisplayFor(m => item.Area)</td>
+                            <td>@Html.DisplayFor(m => item.Sueldo)</td>
+                            <td>@Html.DisplayFor(m => item.Seniority)</td>
+                            <td>
+                                <a asp-route-id="@item.Id" asp-page="Editar" class="btn btn-success btn-sm">Editar</a>
+                                <button asp-page-handler="Borrar" asp-route-id="@item.Id" onclick="return confirm('Estas seguro que quieres borrar?')" class="btn btn-danger btn-sm">Borrar</button>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            }
+            else
+            {
+                <p>No hay ningun personal</p>
+            }
+        </form>
+    </div>
+</div>

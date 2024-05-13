@@ -1,0 +1,105 @@
+﻿@page
+@model POOII_T1_DIEGOENRIQUEZ.Pages.Productos.CrearModel
+@{
+    ViewData["Title"] = "Crear nuevo personal";
+}
+<div class="card">
+    <div class="card-header bg-dark">
+        <div class="row">
+            <div class="col-sm-9">
+                <h2 class="text-info">Crear Nuevo Personal</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="container" style="padding: 30px">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <label asp-for="Personal.Nombre"></label>
+                        </div>
+                        <div class="col-sm-6">
+                            <input asp-for="Personal.Nombre" class="form-control" />
+                        </div>
+                        <span asp-validation-for="Personal.Nombre" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <label asp-for="Personal.Apellido"></label>
+                        </div>
+                        <div class="col-sm-6">
+                            <input asp-for="Personal.Apellido" class="form-control" />
+                        </div>
+                    <span asp-validation-for="Personal.Apellido" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-2">
+                        <label asp-for="Personal.FechaIngreso"></label>
+                        </div>
+                        <div class="col-sm-6">
+                        <input asp-for="Personal.FechaIngreso" class="form-control" />
+                        </div>
+                    <span asp-validation-for="Personal.FechaIngreso" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-2">
+                        <label asp-for="Personal.Area"></label>
+                        </div>
+                        <div class="col-sm-6">
+                        <input asp-for="Personal.Area" class="form-control" />
+                        </div>
+                    <span asp-validation-for="Personal.Area" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <label asp-for="Personal.Sueldo"></label>
+                        </div>
+                        <div class="col-sm-6">
+                        <input asp-for="Personal.Sueldo" class="form-control" />
+                        </div>
+                    <span asp-validation-for="Personal.Sueldo" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <label asp-for="Personal.Seniority"></label>
+                        </div>
+                        <div class="col-sm-6">
+                        <input asp-for="Personal.Seniority" class="form-control" />
+                        </div>
+                    <span asp-validation-for="Personal.Seniority" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    <div class="row">
+                        <div class="col-sm-2 offset-sm-2">
+                            <input type="submit" value="Crear" class="btn btn-primary form-control" />
+                        </div>
+                        <div class="col-sm-4">
+                            <a asp-page="Index" class="btn btn-success form-control">Volver a la lista del personal</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
